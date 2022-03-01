@@ -1,10 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\JokeController;
 
 Route::get('/', function () {
     return view('welcome');
 });
 
-// Create a  todo list in the session
-// Add an invokable class that adds a task
+Route::get('joke', [JokeController::class, 'show']);
