@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Actions\GetsJoke;
+use App\Contracts\GetJoke;
 
 class JokeController extends Controller
 {
-    public function show()
+    public function show(GetJoke $joke)
     {
-        return view('joke', ['joke' => (new GetsJoke())()]);
+        return view('joke', ['joke' => $joke()]);
     }
 }

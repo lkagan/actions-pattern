@@ -2,10 +2,16 @@
 
 namespace App\Providers;
 
+use App\Actions\GetsJoke;
+use App\Contracts\GetJoke;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
 {
+    public $bindings = [
+        GetJoke::class => GetsJoke::class,
+    ];
+
     /**
      * Register any application services.
      *
